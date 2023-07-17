@@ -1,0 +1,12 @@
+def f(start, count):
+    if start > 14 or count > 7:#Если наберется больше часов или неделя закончиться, то способ не подошел
+        return 0
+    if start == 14 and count == 7:#Только если достигли 14 часов ровно за 7 дней способ подходит
+        return 1
+    if count == 2:#в среду не учимся
+        return f(start, count + 1)
+    return f(start + 3, count + 1) + \
+        f(start + 2, count + 1) + \
+        f(start + 1, count + 1) + \
+        f(start, count + 1)#заполняем значения след. дней
+print(f(0, 0))
