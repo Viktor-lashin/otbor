@@ -8,5 +8,5 @@ def f(start, count):
     return f(start + 3, count + 1) + \
         f(start + 2, count + 1) + \
         f(start + 1, count + 1) + \
-        f(start, count + 1)#заполняем значения след. дней
+        f(start, count + 1)#суммируем способы
 print(f(0, 0))
